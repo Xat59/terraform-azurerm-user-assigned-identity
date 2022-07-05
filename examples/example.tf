@@ -1,5 +1,5 @@
 module "identity" {
-  source = "github.com/Xat59/terraform-azurerm-user-assigned-identity.git?ref=0.1.0"
+  source = "github.com/Xat59/terraform-azurerm-user-assigned-identity.git?ref=v0.1.0"
 
   location            = resource_group.location
   resource_group_name = resource_group.id
