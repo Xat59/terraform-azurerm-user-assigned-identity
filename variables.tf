@@ -12,9 +12,16 @@ variable "location" {
 
 # User identity variables
 ####
+variable "create_identity" {
+  description = "(Optional) Whether to create identity."
+  type        = bool
+  default     = true
+}
+
 variable "identity_name" {
-  description = "(Required) The name of the user assigned identity. Changing this forces a new identity to be created."
+  description = "(Optional) The name of the user assigned identity. Changing this forces a new identity to be created."
   type        = string
+  default     = null
 }
 
 variable "identity_tags" {
@@ -51,6 +58,12 @@ variable "role_definition_name" {
 
 variable "role_description" {
   description = "(Optional) The description for this Role Assignment. Changing this forces a new resource to be created."
+  type        = string
+  default     = null
+}
+
+variable "role_principal_id" {
+  description = "(Optional) The ID of the Principal (User, Group or Service Principal) to assign the Role Definition to. If not specified, then it automatically assign the role to the created identity. Changing this forces a new resource to be created."
   type        = string
   default     = null
 }
